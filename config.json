@@ -1,0 +1,10 @@
+{
+    "initial_recoil": 20,
+    "max_recoil": 40,
+    "single_shoot_recoil": 10,
+    "delay_auto": 0.01,
+    "delay_single": 0.05,
+    "acceleration_factor": 1.8,
+    "toggle_key": "p",
+    "exit_key": "esc"
+}

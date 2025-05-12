@@ -1,0 +1,42 @@
+# Build and binary files
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.cache
+*.log
+
+# Dependencies
+packages/
+node_modules/
+
+# Environment and configuration
+venv
+*.env
+appsettings*.json
+Main.spec
+
+# IDE specific
+.vscode/
+*.sln.iml
+
+# Temporary files
+temp/
+tmp/
+*~
+*.swp
+*.bak
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+Build
+test.py
+NoRecoil.py
