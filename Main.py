@@ -13,6 +13,8 @@ from licensing.models import *
 from licensing.methods import Key, Helpers
 from datetime import datetime
 
+versao = "Versão: 1.0.1"
+
 def resource_path(relative_path):
     """Obtem o caminho absoluto para o arquivo de recurso."""
     try:
@@ -86,8 +88,6 @@ class LoginWindow:
         self.window.configure(bg="black")
         self.window.resizable(False, False)
         self.window.protocol("WM_DELETE_WINDOW", self.on_close)
-        global versao
-        versao = "Versão: 1.0.1"
         
 
 # Adicionar um label para mostrar a versão no canto inferior direito
