@@ -13,6 +13,15 @@ from licensing.models import *
 from licensing.methods import Key, Helpers
 from datetime import datetime
 
+def resource_path(relative_path):
+    """Obtem o caminho absoluto para o arquivo de recurso."""
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 class MouseInput(ctypes.Structure):
     _fields_ = [("dx", ctypes.c_long),
                 ("dy", ctypes.c_long),
@@ -70,6 +79,10 @@ class LoginWindow:
         self.window = tk.Tk()
         self.window.title("Verificação de Licença")
         self.window.geometry("700x394")
+        try:
+            self.window.iconbitmap(resource_path("back.ico"))
+        except:
+            pass
         self.window.configure(bg="black")
         self.window.resizable(False, False)
         self.window.protocol("WM_DELETE_WINDOW", self.on_close)
@@ -230,7 +243,10 @@ class MainApp:
         self.root = tk.Tk()
         self.root.title("No Recoil")
         self.root.geometry("700x420")
-        self.root.iconbitmap("./images/back.ico")
+        try:
+            self.root.iconbitmap(resource_path("back.ico"))
+        except:
+            pass
         self.root.configure(bg="black")
         self.root.resizable(False, False)
         self.root.protocol("WM_DELETE_WINDOW", self.close_script)
@@ -364,7 +380,10 @@ class MainApp:
         settings_window = tk.Toplevel(self.root)
         settings_window.title("Configurações")
         settings_window.geometry("400x500")
-        settings_window.iconbitmap("./images/back.ico")
+        try:
+            settings_window.iconbitmap(resource_path("back.ico"))
+        except:
+            pass
         settings_window.configure(bg="black")
         settings_window.resizable(False, False)
 
@@ -372,7 +391,10 @@ class MainApp:
             advanced_window = tk.Toplevel(settings_window)
             advanced_window.title("Opções Avançadas")
             advanced_window.geometry("350x250")
-            advanced_window.iconbitmap("./images/back.ico")
+            try:
+                advanced_window.iconbitmap(resource_path("back.ico"))
+            except:
+                pass
             advanced_window.configure(bg="black")
             advanced_window.resizable(False, False)
 
