@@ -86,7 +86,9 @@ class LoginWindow:
         self.window.configure(bg="black")
         self.window.resizable(False, False)
         self.window.protocol("WM_DELETE_WINDOW", self.on_close)
-        versao = "Versão: 1.0.0"
+        global versao
+        versao = "Versão: 1.0.1"
+        
 
 # Adicionar um label para mostrar a versão no canto inferior direito
         versao_label = tk.Label(self.window, text=versao, font=("Arial", 10), anchor="e", padx=10, bg="black", fg="white")
@@ -285,6 +287,7 @@ class MainApp:
     
 
     def create_ui(self):
+        color = "red"
         self.expiry_label = tk.Label(self.root, text="Data de Expiração: ", fg="white", bg="black", font=("Arial", 10))
         self.expiry_label.pack(side="top", pady=1)
 
@@ -301,9 +304,8 @@ class MainApp:
          ░     ░ ░        ░        ░  ░░ ░          ░ ░   ░      ░  ░
                                        ░                             
 
-""", fg="red", bg="black", font=("Courier", 10, "bold"))
+""", fg=color, bg="black", font=("Courier", 10, "bold"))
         self.title_label.pack(pady=5)
-        versao = "Versão: 1.0.0"
         versao_label = tk.Label(self.root, text=versao, font=("Arial", 10), anchor="e", padx=10, bg="black", fg="white")
         versao_label.pack(side="bottom", fill="x")
 
@@ -336,6 +338,7 @@ class MainApp:
         self.script_ativo = not self.script_ativo
         self.status_label.config(text=f"Status: {'Ativado' if self.script_ativo else 'Desativado'}", 
                         fg='green' if self.script_ativo else 'red')
+        self.title_label.config(fg='green' if self.script_ativo else 'red')
 
     def on_click(self, x, y, button, pressed):
         global mouse_left_pressed
