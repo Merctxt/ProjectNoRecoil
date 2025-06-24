@@ -2,6 +2,8 @@
 
 Este é um software de **No Recoil** desenvolvido com a biblioteca `pywin32`, utilizando a função `SendInput` para simular o controle do recuo de armas em jogos de tiro (FPS). Ele atua de forma **parcial ou totalmente automática**, conforme a configuração, reduzindo o recuo das armas para facilitar o controle durante o disparo.
 
+![Imgur](https://i.imgur.com/e0Btiaj.png)
+
 ---
 
 ## ⚠️ AVISO LEGAL
